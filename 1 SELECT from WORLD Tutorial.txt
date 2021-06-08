@@ -1,0 +1,69 @@
+************************************************
+SELECT name, continent, population FROM world
+
+************************************************
+SELECT name
+  FROM world
+ WHERE population > 200000000
+
+************************************************
+SELECT name,gdp/population
+  FROM world
+ WHERE population > 200000000
+
+************************************************
+SELECT name, population/1000000
+  FROM world
+ WHERE continent= 'South America'
+
+************************************************
+SELECT name, population 
+FROM world
+WHERE name ='France' or name ='Germany' or name ='Italy'
+
+************************************************
+select name
+from world
+where name like '%united%'
+
+************************************************
+select name, population, area
+from world
+where area>3000000 or population >250000000
+
+************************************************
+Select name, population, area
+from world
+where (population >= 250000000 AND NOT area >= 3000000) OR 
+      (area >= 3000000 AND population < 250000000);
+
+************************************************
+select name, round(population/1000000,2),round( gdp/1000000000,2)
+from world
+where continent='south america'
+
+
+************************************************
+SELECT name, round((gdp/population/1000),0)*1000 
+FROM world
+WHERE gdp >1000000000000;
+
+************************************************
+SELECT name, capital
+  FROM world
+ WHERE LEN(name) = LEN(capital)
+
+************************************************
+SELECT name, capital
+FROM world
+WHERE LEFT(name,1) = LEFT(capital,1) AND name <> capital
+
+************************************************
+
+SELECT name
+   FROM world
+WHERE name LIKE '%A%' AND name LIKE '%E%'AND name LIKE'%I%'AND name LIKE '%O%'AND name LIKE '%U%'
+  AND name NOT LIKE '% %'
+************************************************
+
+
